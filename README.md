@@ -15,10 +15,10 @@ The managed identity requires the following Graph Permissions:
 - UserAuthenticationMethod.Read.All
 
 The script requires the following modules:
-- Az.Accounts (should be active by default)
+- Az.Accounts (should be installed by default!)
 - Microsoft.Graph.Authentication
 - Microsoft.Graph.Groups
 - Microsoft.Graph.Identity.SignIns
 - Microsoft.Graph.Users
 
-Important: Define the variables for the two necessary groups at the beginning of the script.
+IMPORTANT: Define the variables for the two necessary groups in the Automation Variables as "dynamicmfa_groupid_capable" and "dynamicmfa_groupid_noncapable", or hardcode them in this script.
