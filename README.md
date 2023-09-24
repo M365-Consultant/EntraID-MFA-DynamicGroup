@@ -15,7 +15,6 @@ The managed identity requires the following Graph Permissions:
 - UserAuthenticationMethod.Read.All
 
 The script requires the following modules:
-- Az.Accounts (should be installed by default!)
 - Microsoft.Graph.Authentication
 - Microsoft.Graph.Groups
 - Microsoft.Graph.Identity.SignIns
