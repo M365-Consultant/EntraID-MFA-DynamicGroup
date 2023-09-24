@@ -11,7 +11,6 @@ The managed identity requires the following Graph Permissions:
 - UserAuthenticationMethod.Read.All
 
 The script requires the following modules:
-- Az.Accounts (should be installed by default!)
 - Microsoft.Graph.Authentication
 - Microsoft.Graph.Groups
 - Microsoft.Graph.Identity.SignIns
@@ -32,10 +31,7 @@ $groupid_noncapable = Get-AutomationVariable -Name 'dynamicmfa_groupid_noncapabl
 
 
 #Connect to Microsoft Graph within Azure Automation
-Connect-AzAccount -Identity
-$token = Get-AzAccessToken -ResourceUrl "https://graph.microsoft.com"
-$securetoken = ConvertTo-SecureString -String $token.Token -AsPlainText -Force
-Connect-MgGraph -AccessToken $securetoken
+Connect-MgGraph -Identity
 
 # Adding users to the matching group
 $users = get-mguser -All
