@@ -17,6 +17,8 @@
  This script is designed for an Azure Runbook to assign users to two Azure AD groups based on their MFA capability (capable / non-capable).
  Before running the runbook, you need to set up an automation account with a managed identity.e).
  
+ IMPORTANT: Define the variables for the two necessary groups in the Automation Variables as "dynamicmfa_groupid_capable" and "dynamicmfa_groupid_noncapable", or hardcode them in this script.
+
  The managed identity requires the following Graph Permissions:
     - User.Read.All
     - Group.Read.All
@@ -28,8 +30,6 @@
     - Microsoft.Graph.Groups
     - Microsoft.Graph.Identity.SignIns
     - Microsoft.Graph.Users
-
- !!! Important: Define the variables for the two necessary groups in the Automation Variables as "dynamicmfa_groupid_capable" and "dynamicmfa_groupid_noncapable", or hardcode them in this script. !!!
 
 #> 
 
