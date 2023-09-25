@@ -14,6 +14,8 @@
 .DESCRIPTION 
  Azure Runbook - Dynamic Group - MFA State
  
+This is an important change!
+
  This script is designed for an Azure Runbook to assign users to two Azure AD groups based on their MFA capability (capable / non-capable).
  Before running the runbook, you need to set up an automation account with a managed identity.e).
  
