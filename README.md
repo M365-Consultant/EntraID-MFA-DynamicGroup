@@ -39,5 +39,6 @@ There are a few parameters which must be set for a job run:
 v0.4 Email-Reporting implementation / changing from variables to parameters
 - Implemented a email reporting which requires the permission 'Mail.Send' and the Graph-Module 'Microsoft.Graph.Users.Actions'
 - Changed from variables to parameters, which makes handling within Azure Runbooks easier
+
 v0.3 First release
 - First release of this script
