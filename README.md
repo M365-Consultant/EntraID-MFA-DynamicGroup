@@ -11,34 +11,36 @@ To mitigate this issue, a potential solution would be to generally block externa
 Before using the Azure Runbook, you need to set up an automation account with a managed identity.
 
  The managed identity requires the following Graph Permissions:
-    - User.Read.All
-    - Group.ReadWrite.All
-    - UserAuthenticationMethod.Read.All
-    - Mail.Send
-
+- User.Read.All
+- Group.ReadWrite.All
+- UserAuthenticationMethod.Read.All
+- Mail.Send
 
  The script requires the following modules:
-    - Microsoft.Graph.Authentication
-    - Microsoft.Graph.Groups
-    - Microsoft.Graph.Identity.SignIns
-    - Microsoft.Graph.Users
-    - Microsoft.Graph.Users.Actions
+- Microsoft.Graph.Authentication
+- Microsoft.Graph.Groups
+- Microsoft.Graph.Identity.SignIns
+- Microsoft.Graph.Users
+- Microsoft.Graph.Users.Actions
 
 # Parameters
 There are a few parameters which must be set for a job run:
-    - $groupid_capable -> The Object-ID of a EntraID (AzureAD) group where MFA capable uers's should be assigned
-    - $groupid_noncapable -> The Object-ID of a EntraID (AzureAD) group where MFA NON-capable uers's should be assigned
-    - $mailMode -> This controls the mail behavior. Enter the mode you want without using '
-        'always' - sends a mail on every run
-        'changes' - sends a mail only if there were any changes
-        'disabled' - never send a mail
-    - $mailSender -> The mail-alias from which the mail will be send (can be a user-account or a shared-mailbox)
-    - $mailRecipients -> The recipient(s) of the mail (internal or external). If you want more than one recipient, you can separate them with the character ; in between.
+- $groupid_capable
+  - The Object-ID of a EntraID (AzureAD) group where MFA capable uers's should be assigned
+- $groupid_noncapable
+  - The Object-ID of a EntraID (AzureAD) group where MFA NON-capable uers's should be assigned
+- $mailMode -> This controls the mail behavior. Enter the mode you want without using '
+  - 'always' - sends a mail on every run
+  - 'changes' - sends a mail only if there were any changes
+  - 'disabled' - never send a mail
+- $mailSender
+  - The mail-alias from which the mail will be send (can be a user-account or a shared-mailbox)
+- $mailRecipients
+  - The recipient(s) of the mail (internal or external). If you want more than one recipient, you can separate them with the character ; in between.
 
 # Changelog
-v0.4 Email-Reporting implementation / changing from variables to parameters
-- Implemented a email reporting which requires the permission 'Mail.Send' and the Graph-Module 'Microsoft.Graph.Users.Actions'
-- Changed from variables to parameters, which makes handling within Azure Runbooks easier
-
-v0.3 First release
-- First release of this script
+- v0.4 Email-Reporting implementation / changing from variables to parameters
+  - Implemented a email reporting which requires the permission 'Mail.Send' and the Graph-Module 'Microsoft.Graph.Users.Actions'
+  - Changed from variables to parameters, which makes handling within Azure Runbooks easier
+- v0.3 First release
+  - First release of this script
